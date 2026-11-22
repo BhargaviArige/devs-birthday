@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Advance Happy Birthday Devs!</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background: #050008;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #d8a4ff;
+            text-shadow: 0 0 15px #a020f0,
+                         0 0 35px #a020f0;
+            animation: glow 2s infinite alternate;
+        }
+
+        .devs {
+            font-family: 'Great Vibes', cursive;
+            font-size: 6rem;
+            margin-top: 20px;
+            color: #e3b5ff;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px #a020f0,
+                         0 0 30px #c77dff,
+                         0 0 50px #8000ff;
+            animation: glow 2s infinite alternate;
+        }
+
+        p {
+            margin-top: 25px;
+            font-size: 1.1rem;
+            color: #dcb5ff;
+            line-height: 2;
+        }
+
+        .signature {
+            position: absolute;
+            bottom: 20px;
+            right: 25px;
+            color: #c77dff;
+            font-size: 18px;
+            font-style: italic;
+            text-shadow: 0 0 10px #a020f0;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -30px;
+            color: #c77dff;
+            font-size: 15px;
+            animation: float 8s linear infinite;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.9;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #a020f0;
+            }
+
+            to {
+                text-shadow: 0 0 30px #c77dff,
+                             0 0 50px #8000ff;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .devs {
+                font-size: 4.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Advance Happy Birthday!</h1>
+
+        <h2 class="devs">Devs 💜</h2>
+
+        <p>
+            May your day be filled with love,<br>
+            laughter and endless happiness! ✨
+        </p>
+
+    </div>
+
+    <div class="signature">from rubs ♡</div>
+
+    <script>
+        function createHeart() {
+
+            const heart = document.createElement("div");
+
+            heart.classList.add("heart");
+            heart.innerHTML = "♥";
+
+            heart.style.left = Math.random() * 100 + "vw";
+
+            heart.style.fontSize =
+                (Math.random() * 12 + 8) + "px";
+
+            heart.style.animationDuration =
+                (Math.random() * 5 + 5) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+
+</body>
+</html>
